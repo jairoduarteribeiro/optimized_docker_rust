@@ -1,0 +1,25 @@
+{
+  "name": "Rust",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "postCreateCommand": "rustup component add rustfmt clippy",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "rust-lang.rust-analyzer"
+      ],
+      "settings": {
+        "rust-analyzer.check.command": "clippy",
+        "rust-analyzer.checkOnSave.command": "clippy",
+        "[rust]": {
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  }
+}
